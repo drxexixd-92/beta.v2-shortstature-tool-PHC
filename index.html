@@ -806,7 +806,7 @@ function doCalc() {
     g("bIco").innerHTML="&#128308;";
     tEl.className="b-title c-urgent";
     tEl.textContent="URGENT REFERRAL Required";
-    dEl.textContent="This "+al+" "+gl+" (height: "+h+" cm, "+hSDS.toFixed(2)+" SDS) has one or more criteria requiring urgent referral to Pediatric Endocrinology / Neurology.";
+    dEl.textContent="This "+al+" "+gl+" (height: "+h+" cm, "+hSDS.toFixed(2)+" SDS) has one or more criteria requiring urgent referral to Pediatric Endocrinology"+(yn.tumor==="yes"?" / Pediatric Neurology":"")+".";
   } else if(status==="routine"){
     bn.className="banner b-routine";
     g("bIco").innerHTML="&#128993;";
@@ -884,7 +884,7 @@ function buildSteps(status,bmi,hc,boy) {
   var rb=g("refBox"), rh=g("refHdr");
   rb.className="ref-box"+(isUrgent?" urgent":"");
   rh.className=isUrgent?"routine urgent":"routine";
-  rh.textContent=(isUrgent?"URGENT: ":"")+"Please refer this child to Pediatric Endocrinology"+(isUrgent?" / Neurology":"")+" for:";
+  rh.textContent=(isUrgent?"URGENT: ":"")+"Please refer this child to Pediatric Endocrinology"+(yn.tumor==="yes"?" / Pediatric Neurology":"")+" for:";
 
   var items=[
     {urgent:false, text:"Serial height measurements using calibrated stadiometer &mdash; document growth velocity over minimum 6 months"},
